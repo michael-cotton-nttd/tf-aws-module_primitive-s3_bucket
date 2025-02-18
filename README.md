@@ -109,6 +109,7 @@ If `make check` target is successful, developer is good to commit the code to pr
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.16 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.6 |
 
 ## Providers
@@ -116,6 +117,7 @@ If `make check` target is successful, developer is good to commit the code to pr
 | Name | Version |
 |------|---------|
 | <a name="provider_random"></a> [random](#provider\_random) | 3.6.3 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.67.0 |
 
 ## Modules
 
@@ -125,6 +127,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [aws_instance.app_server](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
 | [random_string.string](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
 ## Inputs
@@ -134,6 +137,10 @@ No modules.
 | <a name="input_length"></a> [length](#input\_length) | n/a | `number` | `24` | no |
 | <a name="input_number"></a> [number](#input\_number) | n/a | `bool` | `true` | no |
 | <a name="input_special"></a> [special](#input\_special) | n/a | `bool` | `false` | no |
+| <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | AWS Region | `string` | `"us-east-2"` | no |
+| <a name="input_ami_instance"></a> [ami\_instance](#input\_ami\_instance) | AMI ID of the EC2 instance | `string` | `"ami-088b41ffb0933423f"` | no |
+| <a name="input_ec2_instance_type"></a> [ec2\_instance\_type](#input\_ec2\_instance\_type) | AWS EC2 instance type | `string` | `"t2.micro"` | no |
+| <a name="input_ec2_instance_tags"></a> [ec2\_instance\_tags](#input\_ec2\_instance\_tags) | Tags for ec2 instance resource | `map(string)` | <pre>{<br/>  "Name": "ExampleAppServerInstance"<br/>}</pre> | no |
 
 ## Outputs
 

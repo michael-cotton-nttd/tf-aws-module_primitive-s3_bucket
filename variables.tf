@@ -24,3 +24,29 @@ variable "special" {
   type    = bool
   default = false
 }
+
+variable "aws_region" {
+  description = "AWS Region"
+  type        = string
+  default     = "us-east-2"
+}
+
+variable "ami_instance" {
+  description = "AMI ID of the EC2 instance"
+  type        = string
+  default     = "ami-088b41ffb0933423f"
+}
+
+variable "ec2_instance_type" {
+  description = "AWS EC2 instance type"
+  type        = string
+  default     = "t2.micro"
+}
+
+variable "ec2_instance_tags" {
+  description = "Tags for ec2 instance resource"
+  type        = map(string)
+  default = {
+    Name = "ExampleAppServerInstance"
+  }
+}

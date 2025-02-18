@@ -10,8 +10,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+provider "aws" {
+  region = var.aws_region
+}
+
 resource "random_string" "string" {
   length  = var.length
   numeric = var.number
   special = var.special
+}
+
+resource "aws_instance" "app_server" {
+  ami           = var.ami_instance
+  instance_type = var.ec2_instance_type
+
+  tags = var.ec2_instance_tags
 }
