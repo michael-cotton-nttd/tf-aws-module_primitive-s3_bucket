@@ -10,6 +10,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+# This is where we define the input variables for the module
+# These variables are used to parameterize our config and pass the values to the module
+
 variable "length" {
   type    = number
   default = 24
@@ -24,29 +27,44 @@ variable "special" {
   type    = bool
   default = false
 }
-
+# AWS region
 variable "aws_region" {
   description = "AWS Region"
   type        = string
   default     = "us-east-2"
 }
 
-variable "ami_instance" {
-  description = "AMI ID of the EC2 instance"
+# S3 bucket name
+variable "s3_bucket_name" {
+  description = "Name of the S3 bucket"
   type        = string
-  default     = "ami-088b41ffb0933423f"
+  default     = "bmc-initial-s3-bucket"
 }
 
-variable "ec2_instance_type" {
-  description = "AWS EC2 instance type"
+# S3 bucket object key
+variable "s3_bucket_object_key" {
+  description = "Key of the S3 bucket object"
   type        = string
-  default     = "t2.micro"
+  default     = "index.html"
 }
 
-variable "ec2_instance_tags" {
-  description = "Tags for ec2 instance resource"
-  type        = map(string)
-  default = {
-    Name = "ExampleAppServerInstance"
-  }
+# S3 bucket object source - file to upload
+variable "s3_bucket_object_source" {
+  description = "Source of the S3 bucket object"
+  type        = string
+  default     = "src/index.html"
+}
+
+# S3 bucket object content type - MIME type
+variable "s3_bucket_content_type" {
+  description = "Content type of the S3 bucket object"
+  type        = string
+  default     = "text/html"
+}
+
+# S3 bucket index document aka the "homepage"
+variable "s3_bucket_index_document" {
+  description = "Index document for the S3 bucket"
+  type        = string
+  default     = "index.html"
 }

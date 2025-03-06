@@ -12,7 +12,7 @@
 
 terraform {
   required_version = "~> 1.0"
-
+  # required_providers are like plugins that are required for the module to work
   required_providers {
     random = {
       source  = "hashicorp/random"

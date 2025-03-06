@@ -127,7 +127,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_instance.app_server](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
+| [aws_s3_bucket.my_s3_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket) | resource |
+| [aws_s3_bucket_website_configuration.my_s3_bucket_website](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_website_configuration) | resource |
+| [aws_s3_object.my_s3_bucket_object](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_object) | resource |
 | [random_string.string](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
 ## Inputs
@@ -138,13 +140,17 @@ No modules.
 | <a name="input_number"></a> [number](#input\_number) | n/a | `bool` | `true` | no |
 | <a name="input_special"></a> [special](#input\_special) | n/a | `bool` | `false` | no |
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | AWS Region | `string` | `"us-east-2"` | no |
-| <a name="input_ami_instance"></a> [ami\_instance](#input\_ami\_instance) | AMI ID of the EC2 instance | `string` | `"ami-088b41ffb0933423f"` | no |
-| <a name="input_ec2_instance_type"></a> [ec2\_instance\_type](#input\_ec2\_instance\_type) | AWS EC2 instance type | `string` | `"t2.micro"` | no |
-| <a name="input_ec2_instance_tags"></a> [ec2\_instance\_tags](#input\_ec2\_instance\_tags) | Tags for ec2 instance resource | `map(string)` | <pre>{<br/>  "Name": "ExampleAppServerInstance"<br/>}</pre> | no |
+| <a name="input_s3_bucket_name"></a> [s3\_bucket\_name](#input\_s3\_bucket\_name) | Name of the S3 bucket | `string` | `"bmc-initial-s3-bucket"` | no |
+| <a name="input_s3_bucket_object_key"></a> [s3\_bucket\_object\_key](#input\_s3\_bucket\_object\_key) | Key of the S3 bucket object | `string` | `"index.html"` | no |
+| <a name="input_s3_bucket_object_source"></a> [s3\_bucket\_object\_source](#input\_s3\_bucket\_object\_source) | Source of the S3 bucket object | `string` | `"src/index.html"` | no |
+| <a name="input_s3_bucket_content_type"></a> [s3\_bucket\_content\_type](#input\_s3\_bucket\_content\_type) | Content type of the S3 bucket object | `string` | `"text/html"` | no |
+| <a name="input_s3_bucket_index_document"></a> [s3\_bucket\_index\_document](#input\_s3\_bucket\_index\_document) | Index document for the S3 bucket | `string` | `"index.html"` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | <a name="output_string"></a> [string](#output\_string) | n/a |
+| <a name="output_s3_website"></a> [s3\_website](#output\_s3\_website) | s3 bucket website endpoint |
+| <a name="output_s3_bucket_arn"></a> [s3\_bucket\_arn](#output\_s3\_bucket\_arn) | s3 bucket arn |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

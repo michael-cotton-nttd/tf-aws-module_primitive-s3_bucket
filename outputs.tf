@@ -13,3 +13,13 @@
 output "string" {
   value = random_string.string.result
 }
+
+# s3 bucket website endpoint
+output "s3_website" {
+  value = aws_s3_bucket_website_configuration.my_s3_bucket_website.website_endpoint
+}
+
+# s3 bucket arn
+output "s3_bucket_arn" {
+  value = aws_s3_bucket.my_s3_bucket.arn
+}
