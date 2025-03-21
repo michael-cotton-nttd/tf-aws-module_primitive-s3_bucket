@@ -23,3 +23,8 @@ output "s3_website" {
 output "s3_bucket_arn" {
   value = aws_s3_bucket.my_s3_bucket.arn
 }
+
+# s3 bucket id
+output "s3_bucket_id" {
+  value = aws_s3_bucket.my_s3_bucket.id
+}

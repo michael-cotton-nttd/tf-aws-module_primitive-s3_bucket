@@ -153,4 +153,5 @@ No modules.
 | <a name="output_string"></a> [string](#output\_string) | n/a |
 | <a name="output_s3_website"></a> [s3\_website](#output\_s3\_website) | s3 bucket website endpoint |
 | <a name="output_s3_bucket_arn"></a> [s3\_bucket\_arn](#output\_s3\_bucket\_arn) | s3 bucket arn |
+| <a name="output_s3_bucket_id"></a> [s3\_bucket\_id](#output\_s3\_bucket\_id) | s3 bucket id |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
